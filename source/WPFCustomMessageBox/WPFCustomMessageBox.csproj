@@ -86,6 +86,16 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <Resource Include="OpenSans-Bold.ttf" />
+    <Resource Include="OpenSans-BoldItalic.ttf" />
+    <Resource Include="OpenSans-ExtraBold.ttf" />
+    <Resource Include="OpenSans-ExtraBoldItalic.ttf" />
+    <Resource Include="OpenSans-Italic.ttf" />
+    <Resource Include="OpenSans-Light.ttf" />
+    <Resource Include="OpenSans-LightItalic.ttf" />
+    <Resource Include="OpenSans-Regular.ttf" />
+    <Resource Include="OpenSans-Semibold.ttf" />
+    <Resource Include="OpenSans-SemiboldItalic.ttf" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -97,6 +107,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="blankicon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="HUB_topbar_button_about.png" />
+    <Resource Include="HUB_topbar_button_fs.png" />
+    <Resource Include="HUB_topbar_button_min.png" />
+    <Resource Include="HUB_topbar_button_x.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

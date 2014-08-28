@@ -1,5 +1,6 @@
 ﻿using System.Drawing;
 using System.Windows;
+using System.Windows.Input;
 
 namespace WPFCustomMessageBox
 {
@@ -36,11 +37,11 @@ namespace WPFCustomMessageBox
         {
             get
             {
-                return Label_Ok.Content.ToString();
+                return Button_OK.Content.ToString();
             }
             set
             {
-                Label_Ok.Content = value.TryAddKeyboardAccellerator();
+                Button_OK.Content = value;
             }
         }
 
@@ -48,11 +49,11 @@ namespace WPFCustomMessageBox
         {
             get
             {
-                return Label_Cancel.Content.ToString();
+                return Button_Cancel.Content.ToString();
             }
             set
             {
-                Label_Cancel.Content = value.TryAddKeyboardAccellerator();
+                Button_Cancel.Content = value;
             }
         }
 
@@ -60,11 +61,11 @@ namespace WPFCustomMessageBox
         {
             get
             {
-                return Label_Yes.Content.ToString();
+                return Button_Yes.Content.ToString();
             }
             set
             {
-                Label_Yes.Content = value.TryAddKeyboardAccellerator();
+                Button_Yes.Content = value;
             }
         }
 
@@ -72,11 +73,11 @@ namespace WPFCustomMessageBox
         {
             get
             {
-                return Label_No.Content.ToString();
+                return Button_No.Content.ToString();
             }
             set
             {
-                Label_No.Content = value.TryAddKeyboardAccellerator();
+                Button_No.Content = value;
             }
         }
 
@@ -136,6 +137,7 @@ namespace WPFCustomMessageBox
 
         private void DisplayButtons(MessageBoxButton button)
         {
+            
             switch (button)
             {
                 case MessageBoxButton.OKCancel:
@@ -201,7 +203,7 @@ namespace WPFCustomMessageBox
             }
 
             Image_MessageBox.Source = icon.ToImageSource();
-            Image_MessageBox.Visibility = System.Windows.Visibility.Visible;
+            Image_MessageBox.Visibility = System.Windows.Visibility.Collapsed; // disbale it cause its not needed for sopreso
         }
 
         private void Button_OK_Click(object sender, RoutedEventArgs e)
@@ -226,6 +228,26 @@ namespace WPFCustomMessageBox
         {
             Result = MessageBoxResult.No;
             Close();
-        }        
+        }
+        private void CloseTopButton_Click(object sender, RoutedEventArgs e)
+        {
+            Result = MessageBoxResult.No;
+            Close();
+        }
+
+        private void MinTopButton_Click(object sender, RoutedEventArgs e)
+        {
+        }
+
+        private void MaxTopButton_Click(object sender, RoutedEventArgs e)
+        {
+        }
+        private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                this.DragMove();
+            }
+        }
     }
 }
